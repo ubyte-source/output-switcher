@@ -1,0 +1,17 @@
+p.switch { break-inside: avoid; }
+p.switch table { float: none; font-family: Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%; page-break-inside: always; }
+p.switch table { page-break-before: avoid; page-break-after: avoid; page-break-inside: avoid; }
+p.switch table thead tr { background-color: #3a5583; }
+p.switch table thead tr th, table tbody tr td { padding: 4px; }
+p.switch table thead tr th span { color: #ffffff !important; }
+p.switch table tbody tr td { border: 1px solid #ddd; }
+p.switch table tbody tr:nth-child(even) { background-color: #f2f2f2; }
+
+table.switcher { float: none; font-family: Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%; page-break-inside: always; }
+table.switcher { page-break-before: avoid; page-break-after: avoid; page-break-inside: avoid; }
+table.switcher thead tr { background-color: #3a5583; }
+table.switcher thead tr th, table.switcher tbody tr td { padding: 4px; }
+table.switcher thead tr th span { color: #ffffff !important; }
+table.switcher tbody tr td { border: 1px solid #ddd; }
+table.switcher tbody tr:nth-child(even) { background-color: #f2f2f2; }
+table.switcher tbody tr td:first-child, table.switcher thead tr th:first-child { width: 10% !important; }

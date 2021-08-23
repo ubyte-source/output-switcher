@@ -1,0 +1,44 @@
+steps:
+
+- name: ubyte/front-end-minifier:latest
+  env:
+    - 'DIRECTORY=/workspace'
+
+- name: alpine
+  entrypoint: "sh"
+  args:
+  - "-c"
+  - |
+    mv ./lib ./$TAG_NAME
+
+- name: alpine
+  entrypoint: "sh"
+  args:
+  - "-c"
+  - |
+    find ./ | grep -oEi ".*\.(php|git)" | while read -r file ; do
+        rm -rf "$file"
+    done
+
+- name: gcr.io/cloud-builders/gsutil
+  args:
+  - "cp"
+  - "-r"
+  - "./"
+  - "gs://public.energia-europa.com/switcher"
+
+- name: gcr.io/cloud-builders/gsutil
+  args:
+  - "setmeta"
+  - "-h"
+  - "Content-Type:text/css"
+  - "-r"
+  - "gs://public.energia-europa.com/switcher/**.css"
+
+- name: gcr.io/cloud-builders/gsutil
+  args:
+  - "setmeta"
+  - "-h"
+  - "Content-Type:text/javascript"
+  - "-r"
+  - "gs://public.energia-europa.com/switcher/**.js"

@@ -1,0 +1,26 @@
+{
+  "name": "output/switcher",
+  "type": "library",
+  "description": "Javascript output switcher",
+  "keywords": [
+    "ubyte",
+    "client-side",
+    "output",
+    "switcher"
+  ],
+  "homepage": "https://github.com/energia-source/output-switcher",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Paolo Fabris",
+      "email": "support@ubyte.it",
+      "homepage": "https://www.ubyte.it/",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Switcher\\": "lib/"
+    }
+  }
+}
