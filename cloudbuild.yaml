@@ -1,6 +1,6 @@
 steps:
 
-- name: ubyte/front-end-minifier:latest
+- name: ubyte/developer-front-end-minifier:latest
   env:
     - 'DIRECTORY=/workspace'
 
